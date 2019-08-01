@@ -1,6 +1,5 @@
 import { Document, Schema, Model, model } from "mongoose";
 import { SHA256 } from "crypto-js/sha256";
-import { Mongoose } from "mongoose";
 
 import { IUser } from "../types/IUser";
 
