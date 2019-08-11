@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+      "outDir": "../../build/client",
+      "sourceMap": true,
+      "strict": true,
+      "noImplicitReturns": true,
+      "noImplicitAny": false,
+      "module": "esnext",
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "strictPropertyInitialization": false,
+      "moduleResolution": "node",
+      "target": "es5",
+      "lib": [
+        "es2016",
+        "dom",
+      ],
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["./app/*"]
+      }
+    },
+    "include": [
+      "app/**/*.ts",
+      "app/**/*.tsx",
+      "app/**/*.vue"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+  }
