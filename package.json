@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "build:server": "tsc -p ./src/server/tsconfig.json",
-    "build:client": "webpack --mode=development",
+    "build:client": "webpack --config ./src/client/webpack.config.js",
     "build": "npm run build:server | npm run build:client ",
     "start": "node ./build/server/main.js"
   },
