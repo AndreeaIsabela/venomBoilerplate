@@ -1,15 +1,13 @@
 {
-  "name": "vueboilerplate",
+  "name": "venomboilerplate",
   "version": "1.0.0",
-  "description": "A simple vue boilerplate",
+  "description": "A simple vue + express + node + mongoDB boilerplate",
   "main": "main.js",
   "scripts": {
-    "build:server": "tsc -p ./tsconfig.json",
+    "build:server": "tsc -p ./src/server/tsconfig.json",
     "build:client": "webpack --mode=development",
     "build": "npm run build:server | npm run build:client ",
-    "lint": "eslint ./client ./server",
-    "nodemon": "nodemon ./build/server/index.js",
-    "start": "node ./build/server/index.js"
+    "start": "node ./build/server/main.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
