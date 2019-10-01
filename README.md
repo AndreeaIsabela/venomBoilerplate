@@ -1,8 +1,8 @@
 # VENoM boilerplate
 
-![resizer](https://user-images.githubusercontent.com/26048095/65993303-caee4500-e445-11e9-9d84-decdec8aa4dd.jpg)
-
 Frontend (Vue.cli with ts, pug and stylus), Backend (Node with Express), and Database (MongoDB).
+
+![resizer](https://user-images.githubusercontent.com/26048095/65993303-caee4500-e445-11e9-9d84-decdec8aa4dd.jpg)
 
 ## Installation
 
