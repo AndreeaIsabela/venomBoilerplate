@@ -1,0 +1,43 @@
+#center-container
+  .cont
+    .form.sign-in
+      h2 Welcome back!
+      label
+        span Email
+        input(type='email', v-model='loginData.email', v-bind:class='emailError.status')
+        .invalid-feedback {{emailError.message}}
+      label
+        span Password
+        input(type='password', v-model='loginData.password', v-bind:class='passwordError.status')
+        .invalid-feedback {{passwordError.message}}
+      //
+        <p class="forgot-pass">
+        <a href="#">Forgot password?</a>
+        </p>
+      button.submit(type='button', v-on:click='authenticate') Sign In
+    .sub-cont
+      .img
+        .img__text.m--up
+          h2 New here?
+          p Sign up and discover great amount of new opportunities!
+        .img__text.m--in
+          h2 One of us?
+          p If you already have an account, just sign in. We've missed you!
+        .img__btn(v-on:click='reset()')
+          span.m--up Sign Up
+          span.m--in Sign In
+      .form.sign-up
+        h2 Time to feel like home,
+        label
+          span Email
+          input(type='email', v-model='registerData.email', v-bind:class='emailError.status')
+          .invalid-feedback {{emailError.message}}
+        label
+          span Password
+          input(type='password', v-model='registerData.password', v-bind:class='passwordError.status')
+          .invalid-feedback {{passwordError.message}}
+        label
+          span Verify password
+          input(type='password', v-model='registerData.checkPassword', v-bind:class="'is-' + checkPasswordError.status")
+          .invalid-feedback {{checkPasswordError.message}}
+        button.submit(type='button', v-on:click='authenticate') Sign Up

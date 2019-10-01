@@ -1,31 +1,41 @@
 {
-    "compilerOptions": {
-      "outDir": "../../build/client",
-      "sourceMap": true,
-      "strict": true,
-      "noImplicitReturns": true,
-      "noImplicitAny": false,
-      "module": "esnext",
-      "experimentalDecorators": true,
-      "emitDecoratorMetadata": true,
-      "strictPropertyInitialization": false,
-      "moduleResolution": "node",
-      "target": "es5",
-      "lib": [
-        "es2016",
-        "dom",
-      ],
-      "baseUrl": ".",
-      "paths": {
-        "@/*": ["./app/*"]
-      }
-    },
-    "include": [
-      "app/**/*.ts",
-      "app/**/*.tsx",
-      "app/**/*.vue"
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "types": [
+      "webpack-env",
+      "mocha",
+      "chai"
     ],
-    "exclude": [
-      "node_modules"
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
     ]
-  }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

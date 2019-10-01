@@ -1,13 +1,11 @@
 import { Router } from "express";
-
-import * as user from './user';
+import * as userRoutes from './user';
 
 const MainRouter: any = Router();
 
 // mounting the routes on their specific endpoints
-MainRouter.use('/user', user);
-
+MainRouter.use('/user', userRoutes);
 /**
  * Exporting router object.
  */
-export default MainRouter;
+module.exports =  MainRouter;

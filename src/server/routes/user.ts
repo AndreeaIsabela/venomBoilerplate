@@ -9,9 +9,10 @@ const jwtService = require('../middleware/authenticationMiddleware');
 // injecting the user model in the controller instance
 const userController = new UserController(UserModel);
 
+
 userRoutes.post('/register', async (req, res) => {
   try {
-    const verifyUser = await userController.getUserByEmail(req.body.email)
+    const verifyUser = await userController.getUserByEmail(req.body.email);
     if (verifyUser) {
       return res.status(401).end();
     }
@@ -63,4 +64,4 @@ userRoutes.get('/:id', jwtService.userAuthentication, async (req, res) => {
   }
 });
 
-export default userRoutes;
+module.exports = userRoutes;

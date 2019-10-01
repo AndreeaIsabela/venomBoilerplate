@@ -1,0 +1,10 @@
+div
+    nav.navbar.navbar-dark.bg-dark
+        .container
+            router-link.navbar-brand(:to="{ name: 'home' }")
+                span VENoM
+            
+            .justify-content-between
+                span.nav-item.log-out(@click.prevent="logOut()")
+                    i.fa.fa-sign-out  
+                    span.text-element  Log Out

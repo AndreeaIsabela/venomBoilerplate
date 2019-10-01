@@ -1,6 +1,6 @@
 # VENoM boilerplate
 
-Frontend (Vue), Backend (Node with Express), and Database (MongoDB).
+Frontend (Vue.cli with ts, pug and stylus), Backend (Node with Express), and Database (MongoDB).
 
 ## Installation
 
@@ -8,16 +8,6 @@ Frontend (Vue), Backend (Node with Express), and Database (MongoDB).
 2. Clone this repo.
 ```bash
 $ git clone 'https://github.com/AndreeaIsabela/venomBoilerplate.git'
-```
-
-## Usage
-
-Next you'll need to run a few commands from this folder.
-
-```bash
-$ npm install
-$ npm run build
-$ npm start
 ```
 
 ## License

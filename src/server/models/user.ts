@@ -1,5 +1,5 @@
 import { Document, Schema, Model, model } from "mongoose";
-import { SHA256 } from "crypto-js/sha256";
+const SHA256 = require('crypto-js/sha256');
 
 import { IUser } from "../types/IUser";
 
@@ -20,19 +20,19 @@ export const userSchema: Schema = new Schema({
   password: { required:true, type: String}
   });
 
-userSchema.pre("save", (next)=> {
-
+userSchema.pre("save", function (next) {
+  const user = this as IUserModel;
   // only hash the password if it has been modified (or is new)
-  if (!this.isModified('password')) {
+  if (!user.isModified('password')) {
     return next();
   }
   // hash the password
-  const hash = SHA256(this.password);
-  this.password = hash;
+  const hash = SHA256(user.password);
+  user.password = hash;
   next();
 });
 
-userSchema.methods.comparePassword = (candidatePassword) => {
+userSchema.methods.comparePassword = function (candidatePassword) {
   try {
     return SHA256(candidatePassword) == this.password;
   }
