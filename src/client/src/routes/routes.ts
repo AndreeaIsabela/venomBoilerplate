@@ -1,7 +1,7 @@
 import Login from '../views/login/Login.vue';
 
 const PageNotFound = () => import(/* webpackChunkName: "404" */ '../views/notFound/PageNotFound.vue');
-const Home = () => import(/* webpackChunkName: "register" */ '../views/home/Home.vue');
+const Home = () => import(/* webpackChunkName: "Home" */ '../views/home/Home.vue');
 
 export default {
   routes: [
