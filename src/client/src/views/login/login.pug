@@ -40,4 +40,4 @@
           span Verify password
           input(type='password', v-model='registerData.checkPassword', v-bind:class="'is-' + checkPasswordError.status")
           .invalid-feedback {{checkPasswordError.message}}
-        button.submit(type='button', v-on:click='authenticate') Sign Up
+        button.submit(type='button', v-on:click='register') Sign Up

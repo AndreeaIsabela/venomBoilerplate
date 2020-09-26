@@ -117,7 +117,7 @@ export default class Login extends Vue {
     } else {
       this.emailError.status = '';
     }
-    return email.length;
+    return !!email.length;
   }
 
   private checkPassword(password: string) {
