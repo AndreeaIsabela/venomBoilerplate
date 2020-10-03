@@ -6,14 +6,6 @@ const Home = () => import(/* webpackChunkName: "Home" */ '../views/home/Home.vue
 export default {
   routes: [
     {
-      path: '/home',
-      name: 'home',
-      component: Home,
-      meta: {
-        forVisitors: false,
-      },
-    },
-    {
       path: '/login',
       name: 'login',
       component: Login,
@@ -26,7 +18,19 @@ export default {
       name: 'notFound',
       component: PageNotFound,
     },
+    {
+      path: '/',
+      name: 'home',
+      component: Home,
+      meta: {
+        forAuth: true,
+      },
+    },
 
+    {
+      path: '/register',
+      redirect: '/login',
+    },
     {
       path: '*',
       redirect: '/404',
