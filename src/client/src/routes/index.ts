@@ -14,16 +14,15 @@ export function routerFactory(constructor: any) {
    * Navigation guards.
    */
   router.beforeEach((to: any, from: any, next: any) => {
-    if (to.matched.some((record: any) => record.meta.forVisitors)) {
-      if (store.getters['user/isLoggedIn']) {
-        next({ path: '/home' });
+    if (to.matched.some((record: any) => record.meta.forAuth)) {
+      if (!store.getters['user/isLoggedIn']) {
+        next({ path: '/login' });
       } else {
         next();
       }
-    } else if (to.matched.some((record: any) => record.meta.forAuth)) {
-      if (!store.getters['user/isLoggedIn']) {
-        console.log(store.getters['user/isLoggedIn']);
-        next({ path: '/login' });
+    } else if (to.matched.some((record: any) => record.meta.forVisitors)) {
+      if (store.getters['user/isLoggedIn']) {
+        next({ path: '/' });
       } else {
         next();
       }
