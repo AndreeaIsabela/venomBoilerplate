@@ -86,8 +86,8 @@ export default class Login extends Vue {
     if (this.checkForm('register')) {
       try {
         const credentials: ICredentials = {
-          email: this.loginData.email,
-          password: this.loginData.password,
+          email: this.registerData.email,
+          password: this.registerData.password,
         };
         this.createUser(credentials);
         this.$router.push({ name: 'home' });
