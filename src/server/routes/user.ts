@@ -17,9 +17,11 @@ userRoutes.post('/register', async (req, res) => {
       return res.status(401).end();
     }
     const user = await userController.addUser(req.body);
+
     res.json(user);
     return res.status(200).end();
   } catch (err) {
+    console.log(err);
     return res.status(500).end();
   }
 });
@@ -27,6 +29,8 @@ userRoutes.post('/register', async (req, res) => {
 userRoutes.post('/login', async (req, res) => {
   try {
     const user = await userController.getUserByEmail(req.body.email);
+
+    if(!user) return res.status(404).end();
 
     if (user.comparePassword(req.body.password) === true) {
       const userJson = user.toJSON();
@@ -49,6 +53,7 @@ userRoutes.get('/', jwtService.userAuthentication, async (req, res) => {
     const users = await userController.getUsers();
     res.json(users);
   } catch (err) {
+    console.log(err);
     return res.status(500).end();
   }
 });
